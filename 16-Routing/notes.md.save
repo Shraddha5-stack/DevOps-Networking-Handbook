@@ -17,7 +17,7 @@ ip route
 
 The routing table can contain information such as:
 
-Destination network
+##Destination network
 Gateway
 Network interface
 Route metric
@@ -32,7 +32,8 @@ Example:
 A destination can also be a network:
 
 192.168.1.0/24
-Gateway
+
+##Gateway
 
 A gateway is a device that forwards traffic from one network to another.
 
@@ -42,7 +43,7 @@ Example:
 
 In a typical home network, the router acts as the default gateway.
 
-Network Interface
+##Network Interface
 
 A network interface is used to send and receive network traffic.
 
@@ -52,7 +53,7 @@ wlo1
 
 wlo1 is the Wi-Fi interface used by this system.
 
-Default Route
+##Default Route
 
 The default route is used when there is no more specific route available for the destination.
 
@@ -65,7 +66,8 @@ This means:
 default → used when no more specific route exists
 via 192.168.1.1 → traffic is sent through the gateway
 dev wlo1 → traffic is sent through the wlo1 interface
-Route Metric
+
+##Route Metric
 
 A metric is a value used to help Linux choose between routes.
 
@@ -82,7 +84,7 @@ Linux selects the most specific matching route.
 
 If no more specific route exists, Linux can use the default route.
 
-Viewing the Default Route
+## Viewing the Default Route
 
 Use:
 
@@ -90,7 +92,7 @@ ip route show default
 
 This displays the default route configured on the system.
 
-Checking a Specific Route
+## Checking a Specific Route
 
 The command:
 
@@ -108,7 +110,8 @@ Destination → 8.8.8.8
 Gateway → 192.168.1.1
 Interface → wlo1
 Source IP → 192.168.1.5
-Checking a Local Destination
+
+## Checking a Local Destination
 
 You can also check how Linux reaches the local gateway:
 
@@ -120,7 +123,7 @@ Example:
 
 This shows that the gateway is directly reachable through the wlo1 interface.
 
-Routing Flow
+## Routing Flow
 
 A simple routing flow can be represented as:
 
@@ -137,7 +140,7 @@ Gateway / Interface
      |
      v
 Destination
-Example Network
+## Example Network
 Laptop
 192.168.1.5
     |
