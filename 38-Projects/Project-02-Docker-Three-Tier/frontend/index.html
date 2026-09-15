@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevOps 3-Tier Application</title>
+</head>
+<body>
+    <h1>🚀 DevOps 3-Tier Application</h1>
+    <p>Frontend: Nginx</p>
+    <p>Backend: Python Flask</p>
+    <p>Database: MySQL</p>
+
+    <button onclick="checkBackend()">Check Backend</button>
+    <p id="result"></p>
+
+    <script>
+        async function checkBackend() {
+            try {
+                const response = await fetch('/api/health');
+                const data = await response.json();
+                document.getElementById('result').innerText =
+                    JSON.stringify(data);
+            } catch (error) {
+                document.getElementById('result').innerText =
+                    'Backend connection failed';
+            }
+        }
+    </script>
+</body>
+</html>
